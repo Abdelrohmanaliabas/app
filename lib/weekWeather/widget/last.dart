@@ -1,3 +1,5 @@
+import 'package:app/constant.dart';
+import 'package:app/fontStyle.dart';
 import 'package:flutter/material.dart';
 
 class Last extends StatelessWidget {
@@ -13,124 +15,85 @@ class Last extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-                boxShadow: [],
-                gradient: const LinearGradient(
-                    colors: [Color(0xff182140), Color(0xff913fa8)],
+                border: Border.all(
+                  color: Colors.white,
+                ),
+                gradient: LinearGradient(
+                    colors: [Constant.darkColor, Constant.lightColor],
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft),
                 borderRadius: BorderRadius.circular(18)),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 24),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12.0, vertical: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.sunny,
                         size: 20,
                         color: Colors.white,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
-                      Text(
-                        'SUNRISE',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Open Sens',
-                            letterSpacing: 0.47,
-                            color: Colors.white),
-                      ),
+                      Text('SUNRISE', style: Fontstyle.t16w400open),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
-                  Text(
-                    '5:28 AM',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Open Sens',
-                        letterSpacing: 0.47,
-                        color: Colors.white),
-                  ),
-                  SizedBox(
+                  Text('5:28 AM', style: Fontstyle.t24w400pop),
+                  const SizedBox(
                     height: 8,
                   ),
-                  Text(
-                    'Sunset: 7.25PM',
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Open Sens',
-                        letterSpacing: 0.47,
-                        color: Colors.white),
-                  ),
+                  Text('Sunset: 7.25PM', style: Fontstyle.t16w400open),
                 ],
               ),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Container(
             decoration: BoxDecoration(
-                boxShadow: [],
-                gradient: const LinearGradient(
-                    colors: [Color(0xff182140), Color(0xff913fa8)],
+                border: Border.all(color: Colors.white),
+                gradient: LinearGradient(
+                    colors: [Constant.darkColor, Constant.lightColor],
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft),
                 borderRadius: BorderRadius.circular(18)),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 24),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12.0, vertical: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.sunny,
                         size: 20,
                         color: Colors.white,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
-                      Text(
-                        'SUNRISE',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Open Sens',
-                            letterSpacing: 0.47,
-                            color: Colors.white),
-                      ),
+                      Text('SUNRISE', style: Fontstyle.t16w400open),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
-                  Text(
-                    '5:28 AM',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Open Sens',
-                        letterSpacing: 0.47,
-                        color: Colors.white),
-                  ),
-                  SizedBox(
+                  Text('5:28 AM',
+                      style: Fontstyle.t20w400pop
+                          .copyWith(fontFamily: 'Open Sens')),
+                  const SizedBox(
                     height: 8,
                   ),
                   Text(
                     'Sunset: 7.25PM',
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Open Sens',
-                        letterSpacing: 0.47,
-                        color: Colors.white),
+                    style: Fontstyle.t16w400open,
                   ),
                 ],
               ),

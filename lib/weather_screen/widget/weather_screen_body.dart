@@ -1,3 +1,6 @@
+import 'package:app/constant.dart';
+import 'package:app/fontStyle.dart';
+import 'package:app/weather_screen/widget/bottom_nav_bar.dart';
 import 'package:app/weather_screen/widget/weather_info.dart';
 import 'package:app/weekWeather/weekWeather.dart';
 import 'package:flutter/material.dart';
@@ -9,62 +12,45 @@ class WeatherScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-        Color(0xff362A84),
-        Color(0xff9541ad),
-      ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Constant.darkColor, Constant.lightColor],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
       child: Scaffold(
-        backgroundColor: Colors.lightGreenAccent.withOpacity(0),
+        backgroundColor: Constant.darkColor.withOpacity(0),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Image(
+            Image(
               image: AssetImage(
-                'assets/images/Weather _))10 18.png',
+                Constant.imageSplashView,
               ),
               width: 240,
             ),
-            const Text(
+            Text(
               '19°',
-              style: TextStyle(
-                  fontSize: 64,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                  fontFamily: 'Poppins'),
+              style: Fontstyle.t64w500Pop,
             ),
-            const Text(
+            Text(
               'Precipitations',
-              style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                  letterSpacing: 0.47,
-                  color: Colors.white,
-                  fontFamily: 'Poppins'),
+              style: Fontstyle.t24w400pop,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'min: 24°',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 0.47,
-                      color: Colors.white,
-                      fontFamily: 'Poppins'),
+                  style: Fontstyle.t24w400pop,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 28,
                 ),
                 Text(
                   'max: 24°',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 0.47,
-                      color: Colors.white,
-                      fontFamily: 'Poppins'),
+                  style: Fontstyle.t24w400pop,
                 ),
               ],
             ),
@@ -74,13 +60,13 @@ class WeatherScreenBody extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return Weekweather();
+                      return const Weekweather();
                     },
                   ),
                 );
               },
-              child: const Image(
-                image: AssetImage('assets/images/House (1).png'),
+              child: Image(
+                image: AssetImage(Constant.imageHouse),
               ),
             ),
             Flexible(
@@ -90,51 +76,41 @@ class WeatherScreenBody extends StatelessWidget {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                       colors: [
-                        Color(0xff362A84),
-                        Color(0xff9541ad),
+                        Constant.darkColor,
+                        Constant.lightColor,
                       ],
                       begin: Alignment.topRight,
                       end: Alignment.bottomLeft,
                     ),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               width: 40,
                             ),
                             Text(
                               'today',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: 0.47,
-                                  color: Colors.white,
-                                  fontFamily: 'Poppins'),
+                              style: Fontstyle.t20w400pop,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 140,
                             ),
                             Text(
                               '22/7',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: 0.47,
-                                  color: Colors.white,
-                                  fontFamily: 'Poppins'),
+                              style: Fontstyle.t20w400pop,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 40,
                             )
                           ],
                         ),
-                        Row(
+                        const Row(
                           children: [
                             Spacer(),
                             WeatherInfo(),
@@ -155,41 +131,7 @@ class WeatherScreenBody extends StatelessWidget {
             )
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.location_on_outlined,
-                  size: 32,
-                ),
-                label: 'home'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.add_circle_outline,
-                  size: 32,
-                ),
-                label: 'plus'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.menu,
-                  size: 32,
-                ),
-                label: 'menu'),
-          ],
-          selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.white,
-          backgroundColor: Colors.black.withOpacity(0),
-          elevation: 0,
-        ),
-
-        //Row(
-
-//   children: [
-//     IconButton(onPressed: (){}, icon: Icon(Icons.location_on_outlined),),
-//     IconButton(onPressed: (){}, icon: Icon(Icons.plus_one_outlined),),
-//     IconButton(onPressed: (){}, icon: Icon(Icons.menu),),
-//   ],
-// ),
+        bottomNavigationBar: const BottomNavBar(),
       ),
     );
   }

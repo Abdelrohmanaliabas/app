@@ -1,3 +1,4 @@
+import 'package:app/constant.dart';
 import 'package:app/weather_screen/widget/weather_info.dart';
 import 'package:flutter/material.dart';
 
@@ -9,12 +10,12 @@ class WeetWeatherInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Color(0xff182140), Color(0xff913fa8)],
+              colors: [Constant.darkColor, Constant.lightColor],
               begin: Alignment.topRight,
               end: Alignment.bottomLeft),
-          borderRadius: BorderRadius.vertical(
+          borderRadius: const BorderRadius.vertical(
               top: Radius.circular(60), bottom: Radius.circular(60))),
       child: const Column(
         children: [
