@@ -1,0 +1,1 @@
+String imageSplashView ='assets/images/photo-1436891620584-47fd0e565afb 1.png';
